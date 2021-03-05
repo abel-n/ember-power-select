@@ -6,6 +6,6 @@
     {{/if}}
   {{/if}}
   {{#each @options as |opt index|}}
-    {{yield opt index @select}}
+    {{yield opt @select index}}
   {{/each}}
 </ul>
