@@ -5,11 +5,7 @@
       <li class="ember-power-select-option ember-power-select-option--loading-message" role="option">{{@loadingMessage}}</li>
     {{/if}}
   {{/if}}
-  {{#let (component @optionComponent) as |Option|}}
-    {{#each @options as |opt index|}}
-      <Option>
-        {{yield opt index @select}}
-      </Option>
-    {{/each}}
-  {{/let}}
+  {{#each @options as |opt index|}}
+    {{yield opt index @select}}
+  {{/each}}
 </ul>
