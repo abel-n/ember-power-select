@@ -1,0 +1,19 @@
+<ul role="listbox" aria-controls="ember-power-select-trigger-{{@select.uniqueId}}" {{did-insert this.addHandlers}} {{will-destroy this.removeHandlers}} ...attributes>
+  {{! template-lint-disable no-unnecessary-concat }}
+  {{#if @select.loading}}
+    {{#if @loadingMessage}}
+      <li class="ember-power-select-option ember-power-select-option--loading-message" role="option">{{@loadingMessage}}</li>
+    {{/if}}
+  {{/if}}
+  {{#let (component @optionComponent) as |Option|}}
+    {{#each @options as |opt index|}}
+      <Option
+        @opt={{opt}}
+        @index={{index}}
+        @select={{@select}}
+      >
+        {{yield opt @select}}
+      </Option>
+    {{/each}}
+  {{/let}}
+</ul>
