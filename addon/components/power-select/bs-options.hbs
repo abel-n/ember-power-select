@@ -7,12 +7,8 @@
   {{/if}}
   {{#let (component @optionComponent) as |Option|}}
     {{#each @options as |opt index|}}
-      <Option
-        @opt={{opt}}
-        @index={{index}}
-        @select={{@select}}
-      >
-        {{yield opt @select}}
+      <Option>
+        {{yield opt index @select}}
       </Option>
     {{/each}}
   {{/let}}
